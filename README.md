@@ -7,7 +7,7 @@ One of them is [fast](https://github.com/avl/strange_performance_repro/blob/mast
 The other is [slow](https://github.com/avl/strange_performance_repro/blob/master/slow.asm) .
 
 On my machine the slow program takes twice the time of the fast one.
-
+    
 
 # Introduction
 
@@ -17,6 +17,8 @@ After looking at the assembly of the two programs (struct and trait) from that i
 Reasonably, all the time had to be spent in that inner loop of six instructions:
 
 ````
+_start:   xor       rax, rax
+          xor       rcx, rcx
 loop0:    add       rax, 1
           mov       rdx, rax
           and       rdx, 1
