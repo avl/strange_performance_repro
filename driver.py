@@ -57,12 +57,13 @@ def run():
         single_cacheline=False
         if loopstart/64 == loopend/64:
             single_cacheline=True
-        print "%d was %s (%s)"%(x,outcome,"single cacheline" if single_cacheline else "spanning two cachelines")
         lastcount+=1
         if outcome!=last:
             last=outcome
             print " ^ This is %d in a row"%(lastcount)
             lastcount=0
+        #print "Adding %d NOP-instructions gave a %s program (innerloop is %s)"%(x,outcome,"single cacheline" if single_cacheline else "spanning two cachelines")
+        print "Adding %d NOP-instructions gave a %s program"%(x,outcome)
         os.system("mv prog.asm output/prog%s%s.asm"%(x,outcome))
         os.system("mv prog.o output/prog%s%s.o"%(x,outcome))
         os.system("mv prog output/prog%s%s"%(x,outcome))
