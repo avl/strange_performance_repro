@@ -27,4 +27,6 @@ The fast program is [here](https://github.com/avl/strange_performance_repro/blob
 The slow program is [here](https://github.com/avl/strange_performance_repro/blob/master/slow.asm) .
 
 
+The python-program "driver.py" builds different assembly-programs, with different number of "nops". There's an odd cycle of 64 bytes, where
+42 are fast and 22 are slow.
 
