@@ -18,6 +18,8 @@ user	0m0,450s
 sys	0m0,000s
 ```
 
+The program is run on machine with Ryzen 9 3900X, and linux ````Linux adesk 5.3.0-40-generic #32~18.04.1-Ubuntu SMP Mon Feb 3 14:05:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux```` 
+
 The only significant difference between the two programs is that the alignment of the loop differs by one byte.
 
 The fast program is [here](https://github.com/avl/strange_performance_repro/blob/master/fast.asm) .
