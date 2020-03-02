@@ -144,6 +144,8 @@ Adding 129 NOP-instructions gave a fast program
 
 The pattern repeats itself with a period of 64 bytes. After inspecting the actual generated programs, it became evident that the critical factor is whether the inner loop spans two cache lines or is located all in one cache line. Why this makes such a big difference I don't know, but I do find it fascinating.
 
+Update! It seems having the program span two cachelines is not the full story. If I arrange for the inner loop to span two cache lines by adding a data-segment before the text (code) segment instead of using NOP-instructions, the slowdown disappears. So it seems the problem is some sort of more advanced interaction with the instruction cache. I'm confused. And very curious what is actually going on!
+
 The python-program puts each program it generates in a folder named ````output/```` where the programs can be inspected.
 
 
