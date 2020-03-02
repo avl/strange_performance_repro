@@ -1,0 +1,9 @@
+fast
+fast.o
+slow
+slow.o
+output/
+prog
+prog.asm
+prog.o
+

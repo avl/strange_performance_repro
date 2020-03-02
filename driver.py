@@ -25,7 +25,14 @@ def makeprog(nops):
 def run():
     last=""
     lastcount=0
-    for x in range(65):
+    s = []
+    try:
+        os.mkdir("output")
+    except: pass
+
+    for x in range(365):
+        loopstart = x+6
+        loopend = x+0x1b+1
         progtext = makeprog(x)
         f=open("prog.asm","w")
         f.write(progtext)
@@ -40,28 +47,25 @@ def run():
         t1 = time.time()
         
         elapsed = t1-t0
-        elapsed*=10.0
+        s.append(elapsed)
+        avg = sum(s)/len(s)
         outcome="other"
-        if elapsed >= 0.4 and elapsed < 0.68:
-            print "%d was fast"%x
-            outcome="fast"
-        elif elapsed >= 0.8 and elapsed < 1.3:
-            print "%d was slow"%x
+        if elapsed > avg:
             outcome="slow"
-        elif elapsed <0.4:
-            print "%d was suspiciously fast"%x
-        elif elapsed >1.1:
-            print "%d was very slow"%x
-        else:
-            print "%d was in the middle"%x
+        else:		
+            outcome="fast"
+        single_cacheline=False
+        if loopstart/64 == loopend/64:
+            single_cacheline=True
+        print "%d was %s (%s)"%(x,outcome,"single cacheline" if single_cacheline else "spanning two cachelines")
         lastcount+=1
         if outcome!=last:
             last=outcome
             print " ^ This is %d in a row"%(lastcount)
             lastcount=0
-        os.system("mv prog.asm prog%s%s.asm"%(x,outcome))
-        os.system("mv prog.o prog%s%s.o"%(x,outcome))
-        os.system("mv prog prog%s%s"%(x,outcome))
+        os.system("mv prog.asm output/prog%s%s.asm"%(x,outcome))
+        os.system("mv prog.o output/prog%s%s.o"%(x,outcome))
+        os.system("mv prog output/prog%s%s"%(x,outcome))
         
 
 
