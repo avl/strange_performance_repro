@@ -25,7 +25,7 @@ loop0:    add       rax, 1
           jne       loop0
 ```` 
 
-On my machine, this exact loop sometimes takes 450 ms, sometimes 900 ms. I just had to know why! 
+On my machine (Ryzen 9 3900X), this exact loop sometimes takes 450 ms, sometimes 900 ms. I just had to know why! 
 
 ## Approach
 
