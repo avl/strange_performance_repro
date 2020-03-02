@@ -17,8 +17,6 @@ After looking at the assembly of the two programs (struct and trait) from that i
 Reasonably, all the time had to be spent in that inner loop of six instructions:
 
 ````
-_start:   xor       rax, rax
-          xor       rcx, rcx
 loop0:    add       rax, 1
           mov       rdx, rax
           and       rdx, 1
