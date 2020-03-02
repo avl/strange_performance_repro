@@ -1,6 +1,4 @@
-This repo contains a minimal reproduction of a performance issue originally reported at 
-
-https://github.com/rust-lang/rust/issues/69593 .
+This repo contains a minimal reproduction of a performance issue originally reported at [rust issue 69593](https://github.com/rust-lang/rust/issues/69593) .
 
 There are minimal assembly programs in this repo, which differ only in one single nop-instruction.
 
@@ -22,9 +20,9 @@ sys	0m0,000s
 
 The only significant difference between the two programs is that the alignment of the loop differs by one byte.
 
-The fast program is [fast](https://github.com/avl/strange_performance_repro/blob/master/fast.asm)
+The fast program is [here](https://github.com/avl/strange_performance_repro/blob/master/fast.asm) .
 
-The slow program is [slow](https://github.com/avl/strange_performance_repro/blob/master/slow.asm)
+The slow program is [here](https://github.com/avl/strange_performance_repro/blob/master/slow.asm) .
 
 
 
