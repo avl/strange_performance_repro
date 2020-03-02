@@ -22,7 +22,9 @@ sys	0m0,000s
 
 The only significant difference between the two programs is that the alignment of the loop differs by one byte.
 
-The fast program is https://github.com/avl/strange_performance_repro/blob/master/fast.asm
-The slow program is https://github.com/avl/strange_performance_repro/blob/master/slow.asm
+The fast program is [fast](https://github.com/avl/strange_performance_repro/blob/master/fast.asm)
+
+The slow program is [slow](https://github.com/avl/strange_performance_repro/blob/master/slow.asm)
+
 
 
