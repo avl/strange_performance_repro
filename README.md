@@ -1,6 +1,6 @@
 # TLDR
 
-I've written two programs which are almost identical. 
+I have two programs which are almost identical (I copied them out of the compiler output for [rust issue 69593](https://github.com/rust-lang/rust/issues/69593) ). 
 
 One of them is [fast](https://github.com/avl/strange_performance_repro/blob/master/fast.asm) .
 
