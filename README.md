@@ -144,6 +144,6 @@ The pattern repeats itself with a period of 64 bytes. After inspecting the actua
 
 The python-program puts each program it generates in a folder named ````output/```` where the programs can be inspected.
 
-Edit: In a previous version I claimed that having the code spanning two cachelines could still be fast. I was mistaken, by accidentally running objdump on the .o-file instead of the executable, which made be draw the wrong conclusions.
+Edit: In a previous version I claimed that having the code spanning two cachelines could still be fast. I was mistaken, by accidentally running objdump on the .o-file instead of the executable, which made me draw the wrong conclusions.
 
 
